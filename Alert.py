@@ -70,7 +70,7 @@ def is_rsi_above_50_or_crossing(df):
 
 def send_discord_alert(symbol, message):
     now_manila = datetime.now(timezone).strftime('%Y-%m-%d %H:%M:%S')
-    content = f"🔔🔻 **Bearish MACD after RSI**\nSymbol: {symbol}\n{message}\n🕒 Manila Time: {now_manila}"
+    content = f"🔔🟢 **Bullish Alert**\nSymbol: {symbol}\nDate: {now_manila}\n========================="
     try:
         requests.post(DISCORD_WEBHOOK_URL, json={"content": content})
         print(f"[ALERT SENT] {symbol}")
@@ -110,7 +110,7 @@ for symbol in symbols:
     print(f"[✓] 5m MACD bearish cross confirmed for {symbol}")
 
     # Step 4: All conditions met — Alert!
-    message = "✅ 15m MACD Bullish Cross\n✅ 5m RSI(30) > 50\n✅ 5m MACD Bearish Cross"
+    message = ""
     send_discord_alert(symbol, message)
 
 print("\n✅ Script completed. No repeated scanning.")
