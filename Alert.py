@@ -10,7 +10,6 @@ try:
     from ta.momentum import RSIIndicator
     from ta.trend import MACD
 except ImportError:
-    !pip install ccxt ta pandas
     import ccxt
     import pandas as pd
     import pytz
