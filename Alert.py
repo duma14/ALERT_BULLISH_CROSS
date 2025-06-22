@@ -184,7 +184,7 @@ def is_rsi_above_50_or_crossing(df):
 
 def send_discord_alert(symbol, message):
     now_manila = datetime.now(timezone).strftime('%Y-%m-%d %H:%M:%S')
-    content = f"🔔🟢 Bullish Alert \n Symbol: {symbol}\n{message}\n📅 Time: {now_manila}"
+    content = f"🔔🟢 Bullish Alert \n Symbol: {symbol}\nDate: {now_manila}\n================================="
     try:
         requests.post(DISCORD_WEBHOOK_URL, json={"content": content})
         print(f"[ALERT SENT] {symbol}")
@@ -222,10 +222,8 @@ for symbol in symbols:
     print(f"[✓] 15m Bearish MACD cross confirmed for {symbol}")
 
     # Send Discord alert
-    alert_message = (
-        
-        "=================================="
-        "\n"
+    alert_message = (""
+       
     )
     send_discord_alert(symbol, alert_message)
 
@@ -295,7 +293,7 @@ def is_rsi_above_50_or_crossing(df):
 
 def send_discord_alert(symbol, message):
     now_manila = datetime.now(timezone).strftime('%Y-%m-%d %H:%M:%S')
-    content = f"🔔🟢 Bullish Alert \n Symbol: {symbol}\n{message}\n📅 Time: {now_manila}"
+    content = f"🔔🟢 Bullish Alert \n Symbol: {symbol}\nDate: {now_manila}\n================================"
     try:
         requests.post(DISCORD_WEBHOOK_URL, json={"content": content})
         print(f"[ALERT SENT] {symbol}")
@@ -334,8 +332,8 @@ for symbol in symbols:
 
     # Send Discord alert
     alert_message = (
-        "=================================="
-        "\n"
+        ""
+      
     )
     send_discord_alert(symbol, alert_message)
 
@@ -406,7 +404,7 @@ def is_rsi_above_50_or_crossing(df):
 
 def send_discord_alert(symbol, message):
     now_manila = datetime.now(timezone).strftime('%Y-%m-%d %H:%M:%S')
-    content = f"🔔🟢 Bullish Alert \n Symbol: {symbol}\n{message}\n📅 Time: {now_manila}"
+    content = f"🔔🟢 Bullish Alert \n Symbol: {symbol}\nDate: {now_manila}\n=================================="
     try:
         requests.post(DISCORD_WEBHOOK_URL, json={"content": content})
         print(f"[ALERT SENT] {symbol}")
@@ -445,8 +443,8 @@ for symbol in symbols:
 
     # All conditions met - Send alert
     alert_message = (
-        "=================================="
-        "\n"
+        ""
+        
     )
     send_discord_alert(symbol, alert_message)
 
