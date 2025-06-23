@@ -24,7 +24,7 @@ jobs:
           pip install -r requirement.txt
 
       - name: Run script
-        env: FIFTEEN_MINS_WEBHOOK: ${{ secrets.FIFTEEN_MINS_WEBHOOK }}
-
+        env:
+          FIFTEEN_MINS_WEBHOOK: ${{ secrets.FIFTEEN_MINS_WEBHOOK }}
         run: python Alert.py
         
