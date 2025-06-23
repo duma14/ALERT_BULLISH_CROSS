@@ -3,4 +3,3 @@ ta
 requests
 pandas
 numpy
-pip install python-dotenv
